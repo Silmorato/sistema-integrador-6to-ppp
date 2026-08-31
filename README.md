@@ -1,6 +1,6 @@
-# Sistema Integrador de Gestion Escolar
+# Sistema Integrador de Gestión Escolar
 
-Proyecto integrador de sexto anio para construir el frontend de un sistema de gestion escolar.
+Proyecto integrador de sexto año para construir el frontend de un sistema de gestión escolar.
 
 ## Objetivo
 
@@ -13,7 +13,7 @@ Crear un prototipo funcional del frontend para gestionar distintos movimientos d
 
 La primera etapa del proyecto se enfoca en el frontend. Los datos pueden simularse con arreglos, archivos JSON o `localStorage`.
 
-## Estructura Tecnica
+## Estructura Técnica
 
 El proyecto se organiza en un solo repositorio, pero con frontend y backend separados:
 
@@ -32,7 +32,7 @@ frontend/
 
 La carpeta `backend/` queda reservada para una segunda etapa, si el tiempo alcanza.
 
-## Como Ejecutar El Frontend
+## Cómo Ejecutar El Frontend
 
 Entrar a la carpeta del frontend:
 
@@ -52,9 +52,9 @@ Iniciar el proyecto:
 npm run dev
 ```
 
-## Modulos
+## Módulos
 
-El sistema se organiza como un unico proyecto con varios modulos:
+El sistema se organiza como un único proyecto con varios módulos:
 
 ```txt
 frontend/src/
@@ -65,20 +65,20 @@ frontend/src/
     notebooks/
 ```
 
-Cada grupo trabaja principalmente dentro de la carpeta de su modulo.
+Cada grupo trabaja principalmente dentro de la carpeta de su módulo.
 
 ## Grupos De Trabajo
 
-| Grupo | Modulo | Responsabilidad principal |
+| Grupo | Módulo | Responsabilidad principal |
 | --- | --- | --- |
-| Grupo 1 | Autenticacion y sistema general | Login, inicio, usuarios, menu principal, roles, rutas generales |
-| Grupo 2 | Laboratorio | Carga, listado y gestion de turnos de laboratorio |
-| Grupo 3 | Comedor | Carga, listado y gestion de turnos de comedor |
-| Grupo 4 | Notebooks | Gestion de notebooks, accesorios, estados y movimientos |
+| Grupo 1 | Autenticación y sistema general | Login, inicio, usuarios, menú principal, roles, rutas generales |
+| Grupo 2 | Laboratorio | Carga, listado y gestión de turnos de laboratorio |
+| Grupo 3 | Comedor | Carga, listado y gestión de turnos de comedor |
+| Grupo 4 | Notebooks | Gestión de notebooks, accesorios, estados y movimientos |
 
 ## Reglas De Trabajo
 
-1. Cada grupo trabaja en su carpeta de modulo.
+1. Cada grupo trabaja en su carpeta de módulo.
 2. Si un grupo necesita modificar archivos generales, debe avisar antes.
 3. No se cambian nombres de rutas sin acordarlo con el resto.
 4. No se modifican estilos globales sin consultar.
@@ -101,11 +101,11 @@ grupo-comedor
 grupo-notebooks
 ```
 
-La rama `main` representa la version estable. La rama `develop` se usa para integrar avances. Cada grupo trabaja en su propia rama.
+La rama `main` representa la versión estable. La rama `develop` se usa para integrar avances. Cada grupo trabaja en su propia rama.
 
-## Entregable Minimo Por Modulo
+## Entregable Mínimo Por Módulo
 
-Cada modulo debe tener:
+Cada módulo debe tener:
 
 - Pantalla principal.
 - Formulario de carga.

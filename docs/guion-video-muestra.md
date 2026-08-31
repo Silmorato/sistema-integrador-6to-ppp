@@ -13,7 +13,7 @@ Duracion sugerida: entre 3 y 5 minutos.
 Ideas para decir:
 
 ```txt
-Somos estudiantes de sexto anio y estamos desarrollando un sistema integrador de gestion escolar.
+Somos estudiantes de sexto año y estamos desarrollando un sistema integrador de gestión escolar.
 El objetivo es crear un prototipo frontend para organizar diferentes movimientos de la escuela.
 ```
 
@@ -152,4 +152,3 @@ Que herramienta nueva aprendimos
 Que nos costo mas
 Que mejorariamos en una proxima version
 ```
-

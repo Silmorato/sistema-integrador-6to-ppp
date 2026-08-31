@@ -6,7 +6,7 @@ Sistema Integrador 6to PPP
 
 ## Objetivo General
 
-Construir un prototipo frontend de un sistema de gestion escolar que permita organizar distintos movimientos de la institucion.
+Construir un prototipo frontend de un sistema de gestión escolar que permita organizar distintos movimientos de la institución.
 
 El sistema esta dividido en modulos:
 
@@ -182,4 +182,3 @@ Durante el proyecto se trabajan contenidos tecnicos y organizativos:
 - Guardar turnos y equipos de manera persistente.
 - Agregar filtros y busquedas.
 - Mejorar permisos segun rol.
-

@@ -1,130 +1,111 @@
 # Sistema Integrador de Gestión Escolar
 
-Proyecto integrador de sexto año para construir el frontend de un sistema de gestión escolar.
+Proyecto integrador de sexto año para construir un prototipo frontend de un sistema de gestión escolar.
 
 ## Objetivo
 
-Crear un prototipo funcional del frontend para gestionar distintos movimientos de la escuela:
+Crear un sitio navegable con HTML y CSS para representar un sistema que permita gestionar distintos movimientos de la escuela:
 
 - Acceso al sistema y usuarios.
 - Turnos de laboratorio.
 - Turnos de comedor.
-- Notebooks, accesorios y estados de uso o reparacion.
+- Notebooks, accesorios y estados de uso o reparación.
 
-La primera etapa del proyecto se enfoca en el frontend. Los datos pueden simularse con arreglos, archivos JSON o `localStorage`.
+En esta etapa no vamos a trabajar con backend ni base de datos. El objetivo es armar la estructura visual del sistema.
 
-## Estructura Técnica
-
-El proyecto se organiza en un solo repositorio, pero con frontend y backend separados:
+## Estructura Del Proyecto
 
 ```txt
-api-integradora/
-  frontend/
-  backend/
+sistema-integrador-6to-ppp/
+  index.html
+  css/
+    estilos.css
+  modulos/
+    autenticacion/
+      login.html
+      usuarios.html
+    laboratorio/
+      laboratorio.html
+    comedor/
+      comedor.html
+    notebooks/
+      notebooks.html
   docs/
 ```
 
-En esta primera etapa vamos a trabajar en:
+## Cómo Ver El Proyecto
+
+Opción simple:
+
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta del proyecto.
+3. Hacer doble clic en `index.html`.
+
+Opción recomendada en Visual Studio Code:
+
+1. Abrir la carpeta del proyecto en VS Code.
+2. Instalar la extensión Live Server, si no está instalada.
+3. Hacer clic derecho sobre `index.html`.
+4. Elegir `Open with Live Server`.
+
+Guía para estudiantes:
+
+[Cómo clonar y abrir el proyecto](docs/guia-para-clonar-y-abrir-el-proyecto.md)
+
+## Dónde Trabaja Cada Grupo
 
 ```txt
-frontend/
+Grupo 1: modulos/autenticacion/
+Grupo 2: modulos/laboratorio/
+Grupo 3: modulos/comedor/
+Grupo 4: modulos/notebooks/
 ```
 
-La carpeta `backend/` queda reservada para una segunda etapa, si el tiempo alcanza.
+La carpeta `css/` tiene los estilos generales del proyecto. Si un grupo necesita cambiar estilos comunes, debe avisar al resto.
 
-## Cómo Ejecutar El Frontend
+## Qué Puede Modificar Cada Grupo
 
-Entrar a la carpeta del frontend:
+Para comenzar, cada grupo puede modificar:
 
-```bash
-cd frontend
-```
-
-Instalar dependencias:
-
-```bash
-npm install
-```
-
-Iniciar el proyecto:
-
-```bash
-npm run dev
-```
-
-Cuando aparezca una dirección como `http://localhost:5173`, abrirla en el navegador.
-
-## Cómo Probar Mi Módulo
-
-1. Ejecutar el frontend con `npm run dev`.
-2. Abrir el navegador en la dirección que indique la terminal.
-3. Ingresar desde el login de prueba.
-4. Entrar al módulo correspondiente desde el menú.
-5. Modificar el archivo del módulo.
-6. Guardar los cambios.
-7. Volver al navegador y revisar si se ve correctamente.
-
-Archivos principales por grupo:
-
-```txt
-Grupo 1: frontend/src/modulos/autenticacion/paginas/Inicio.jsx
-Grupo 2: frontend/src/modulos/laboratorio/paginas/Laboratorio.jsx
-Grupo 3: frontend/src/modulos/comedor/paginas/Comedor.jsx
-Grupo 4: frontend/src/modulos/notebooks/paginas/Notebooks.jsx
-```
-
-Para empezar, conviene modificar textos visibles, campos del formulario, opciones y columnas de la tabla.
-
-## Módulos
-
-El sistema se organiza como un único proyecto con varios módulos:
-
-```txt
-frontend/src/
-  modulos/
-    autenticacion/
-    laboratorio/
-    comedor/
-    notebooks/
-```
-
-Cada grupo trabaja principalmente dentro de la carpeta de su módulo.
+- Títulos.
+- Párrafos.
+- Formularios.
+- Nombres de campos.
+- Opciones de listas.
+- Tablas.
+- Textos de botones.
+- Datos de ejemplo.
 
 ## Grupos De Trabajo
 
 | Grupo | Módulo | Responsabilidad principal |
 | --- | --- | --- |
-| Grupo 1 | Autenticación y sistema general | Login, inicio, usuarios, menú principal, roles, rutas generales |
-| Grupo 2 | Laboratorio | Carga, listado y gestión de turnos de laboratorio |
-| Grupo 3 | Comedor | Carga, listado y gestión de turnos de comedor |
-| Grupo 4 | Notebooks | Gestión de notebooks, accesorios, estados y movimientos |
+| Grupo 1 | Autenticación y sistema general | Login, usuarios, menú principal y roles |
+| Grupo 2 | Laboratorio | Carga, listado y gestión visual de turnos de laboratorio |
+| Grupo 3 | Comedor | Carga, listado y gestión visual de turnos de comedor |
+| Grupo 4 | Notebooks | Gestión visual de notebooks, accesorios, estados y movimientos |
 
 ## Reglas De Trabajo
 
-1. Cada grupo trabaja en su carpeta de módulo.
-2. Si un grupo necesita modificar archivos generales, debe avisar antes.
-3. No se cambian nombres de rutas sin acordarlo con el resto.
-4. No se modifican estilos globales sin consultar.
-5. Cada avance importante debe guardarse con un commit.
-6. Antes de subir cambios, el proyecto debe probarse localmente.
-7. Los mensajes de commit deben explicar que se hizo.
+1. Cada grupo trabaja principalmente en su carpeta.
+2. No se modifican carpetas de otros grupos sin avisar.
+3. No se cambia el nombre de archivos o carpetas sin consultar.
+4. Los estilos generales se modifican con cuidado.
+5. Antes de subir cambios, el proyecto debe probarse localmente.
+6. Cada avance importante debe guardarse con un commit.
 
 ## Versionado
 
 Usaremos Git para guardar versiones del proyecto y GitHub para compartirlas.
 
-Ramas sugeridas:
+Conceptos importantes:
 
-```txt
-main
-develop
-grupo-autenticacion
-grupo-laboratorio
-grupo-comedor
-grupo-notebooks
-```
-
-La rama `main` representa la versión estable. La rama `develop` se usa para integrar avances. Cada grupo trabaja en su propia rama.
+- `git clone`: descargar el proyecto desde GitHub.
+- `git status`: ver qué archivos cambiaron.
+- `git add`: preparar cambios.
+- `git commit`: guardar una versión.
+- `git push`: subir cambios a GitHub.
+- `git pull`: traer cambios desde GitHub.
 
 ## Entregable Mínimo Por Módulo
 
@@ -133,6 +114,6 @@ Cada módulo debe tener:
 - Pantalla principal.
 - Formulario de carga.
 - Listado de registros.
-- Acciones basicas: ver, editar, eliminar o cancelar.
+- Acciones básicas: ver, editar, eliminar o cancelar.
 - Estados posibles.
-- Datos simulados.
+- Datos de ejemplo.

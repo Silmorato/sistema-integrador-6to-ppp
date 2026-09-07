@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acceso al sistema</title>
+    <link rel="stylesheet" href="../../css/estilos.css" />
+  </head>
+  <body>
+    <header class="barra-superior">
+      <h1>Acceso y usuarios</h1>
+      <nav class="menu">
+        <a href="../../index.html">Inicio</a>
+        <a href="usuarios.html">Usuarios</a>
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <section class="panel">
+        <p class="etiqueta">Grupo 1</p>
+        <h2>Login</h2>
+        <p>
+          Pantalla inicial para simular el ingreso de usuarios al sistema.
+        </p>
+
+        <form class="formulario">
+          <label>
+            Usuario
+            <input type="text" placeholder="admin" />
+          </label>
+
+          <label>
+            Contraseña
+            <input type="password" placeholder="1234" />
+          </label>
+
+          <label>
+            Rol
+            <select>
+              <option>Administrador</option>
+              <option>Docente</option>
+              <option>Alumno</option>
+              <option>Preceptor</option>
+            </select>
+          </label>
+
+          <div>
+            <button type="button">Ingresar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

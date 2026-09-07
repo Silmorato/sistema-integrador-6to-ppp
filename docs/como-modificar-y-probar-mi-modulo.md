@@ -4,58 +4,50 @@
 
 Aprender a encontrar el módulo que le corresponde a cada grupo, modificar una parte visible de la pantalla y probar el cambio en el navegador.
 
-## 1. Ejecutar El Proyecto
+## 1. Abrir El Proyecto
 
-Desde Git Bash o la terminal de Visual Studio Code:
+Para ver el sistema no hace falta instalar Node ni ejecutar comandos especiales.
 
-```bash
-cd sistema-integrador-6to-ppp
-cd frontend
-npm install
-npm run dev
-```
-
-Cuando la terminal muestre una dirección como esta:
+Opción simple:
 
 ```txt
-http://localhost:5173
+Doble clic en index.html
 ```
 
-abrirla en el navegador.
+Opción recomendada:
 
-## 2. Entrar Al Sistema
+```txt
+Abrir la carpeta en Visual Studio Code
+Hacer clic derecho en index.html
+Elegir Open with Live Server
+```
 
-El login es simulado.
-
-Pueden ingresar con los datos que ya aparecen cargados en pantalla.
-
-Después de ingresar, se verá el panel de inicio y el menú con los módulos.
-
-## 3. Ubicar Mi Módulo
+## 2. Ubicar Mi Módulo
 
 Cada grupo debe trabajar principalmente en su carpeta:
 
 ```txt
-Grupo 1: frontend/src/modulos/autenticacion
-Grupo 2: frontend/src/modulos/laboratorio
-Grupo 3: frontend/src/modulos/comedor
-Grupo 4: frontend/src/modulos/notebooks
+Grupo 1: modulos/autenticacion
+Grupo 2: modulos/laboratorio
+Grupo 3: modulos/comedor
+Grupo 4: modulos/notebooks
 ```
 
-## 4. Archivo Principal De Cada Grupo
+## 3. Archivo Principal De Cada Grupo
 
-Para comenzar, cada grupo debe modificar su pantalla principal:
+Para comenzar, cada grupo debe modificar su archivo HTML principal:
 
 ```txt
-Grupo 1: frontend/src/modulos/autenticacion/paginas/Inicio.jsx
-Grupo 2: frontend/src/modulos/laboratorio/paginas/Laboratorio.jsx
-Grupo 3: frontend/src/modulos/comedor/paginas/Comedor.jsx
-Grupo 4: frontend/src/modulos/notebooks/paginas/Notebooks.jsx
+Grupo 1: modulos/autenticacion/login.html
+Grupo 1: modulos/autenticacion/usuarios.html
+Grupo 2: modulos/laboratorio/laboratorio.html
+Grupo 3: modulos/comedor/comedor.html
+Grupo 4: modulos/notebooks/notebooks.html
 ```
 
-## 5. Qué Puedo Modificar Primero
+## 4. Qué Puedo Modificar Primero
 
-Para empezar, conviene modificar solo partes visibles de la pantalla:
+Para empezar, conviene modificar partes visibles de la pantalla:
 
 - Títulos.
 - Párrafos.
@@ -63,38 +55,50 @@ Para empezar, conviene modificar solo partes visibles de la pantalla:
 - Textos de botones.
 - Opciones de listas desplegables.
 - Columnas de tablas.
-- Textos de ejemplo.
+- Datos de ejemplo.
 
 Ejemplo:
 
-```jsx
+```html
 <h2>Turnos de laboratorio</h2>
 ```
 
 Se puede cambiar por:
 
-```jsx
+```html
 <h2>Reserva de laboratorios escolares</h2>
 ```
 
-## 6. Qué Conviene No Tocar Todavía
+## 5. Cómo Agregar Un Campo
 
-Si todavía no entendemos React, conviene no modificar estas partes:
+Pueden copiar un campo existente y cambiar el texto.
 
-```jsx
-import ...
-export function ...
-const ...
-map(...)
-onClick={...}
+Ejemplo:
+
+```html
+<label>
+  Profesor
+  <input type="text" placeholder="Nombre del profesor" />
+</label>
 ```
 
-Regla simple:
+Para agregar materia:
 
-```txt
-Si está entre etiquetas, probablemente sea parte visual.
-Si tiene llaves, map, import, export o function, primero consultar.
+```html
+<label>
+  Materia
+  <input type="text" placeholder="Materia" />
+</label>
 ```
+
+## 6. Qué Conviene No Tocar Sin Consultar
+
+Para evitar romper la navegación, consultar antes de modificar:
+
+- Nombres de carpetas.
+- Nombres de archivos.
+- Rutas de enlaces.
+- El archivo `css/estilos.css` si el cambio afecta a todos.
 
 ## 7. Probar Los Cambios
 
@@ -102,13 +106,13 @@ Después de modificar el archivo:
 
 1. Guardar.
 2. Volver al navegador.
-3. Revisar si la pantalla cambió.
-4. Si aparece un error, leer qué archivo menciona.
-5. Revisar si faltó cerrar una etiqueta.
+3. Actualizar la página.
+4. Revisar si la pantalla cambió.
+5. Si algo se ve mal, revisar si faltó cerrar una etiqueta.
 
-Ejemplo de etiquetas que deben cerrarse:
+Ejemplo de etiquetas bien cerradas:
 
-```jsx
+```html
 <section>
   <h2>Título</h2>
   <p>Texto de la pantalla</p>
@@ -129,6 +133,6 @@ Cada grupo debe:
 
 ## 9. Idea Clave
 
-No hace falta entender todo React desde el primer día.
+No hace falta aprender todo el proyecto de una vez.
 
-Primero vamos a reconocer la parte visual de cada componente, modificarla con cuidado y probar los cambios en el navegador.
+Primero vamos a reconocer la estructura HTML, modificar la pantalla del módulo y probar los cambios en el navegador.

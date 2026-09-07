@@ -38,14 +38,17 @@ El prototipo debe incluir:
 
 ```txt
 sistema-integrador-6to-ppp/
-  frontend/
-  backend/
+  index.html
+  css/
+  modulos/
   docs/
 ```
 
-La carpeta `frontend/` contiene la aplicacion que se va a desarrollar ahora.
+El archivo `index.html` es la pantalla principal del sistema.
 
-La carpeta `backend/` queda reservada para una segunda etapa.
+La carpeta `css/` contiene los estilos generales.
+
+La carpeta `modulos/` contiene las pantallas de cada grupo.
 
 La carpeta `docs/` contiene documentacion, consignas y acuerdos del proyecto.
 
@@ -95,9 +98,6 @@ Responsable de:
 
 - HTML.
 - CSS.
-- JavaScript.
-- React.
-- Vite.
 - Git.
 - GitHub.
 - Documentacion del proyecto.
@@ -123,18 +123,17 @@ Conceptos importantes:
 Cada grupo trabaja principalmente dentro de su modulo.
 
 ```txt
-Grupo 1: frontend/src/modulos/autenticacion
-Grupo 2: frontend/src/modulos/laboratorio
-Grupo 3: frontend/src/modulos/comedor
-Grupo 4: frontend/src/modulos/notebooks
+Grupo 1: modulos/autenticacion
+Grupo 2: modulos/laboratorio
+Grupo 3: modulos/comedor
+Grupo 4: modulos/notebooks
 ```
 
 Las carpetas compartidas deben modificarse con cuidado:
 
 ```txt
-frontend/src/componentes
-frontend/src/datos
-frontend/src/estilos
+css/
+docs/
 ```
 
 ## Acuerdos De Interfaz
@@ -153,11 +152,10 @@ Botones comunes:
 
 ## Como Ejecutar El Proyecto
 
-Desde la carpeta `frontend/`:
+Abrir el archivo principal:
 
-```bash
-npm install
-npm run dev
+```txt
+index.html
 ```
 
 ## Aprendizajes Del Proyecto
@@ -176,6 +174,7 @@ Durante el proyecto se trabajan contenidos tecnicos y organizativos:
 
 ## Posibles Mejoras Futuras
 
+- Agregar JavaScript para validar formularios.
 - Conectar el frontend con un backend real.
 - Agregar base de datos.
 - Implementar login real.

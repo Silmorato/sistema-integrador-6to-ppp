@@ -52,6 +52,29 @@ Iniciar el proyecto:
 npm run dev
 ```
 
+Cuando aparezca una dirección como `http://localhost:5173`, abrirla en el navegador.
+
+## Cómo Probar Mi Módulo
+
+1. Ejecutar el frontend con `npm run dev`.
+2. Abrir el navegador en la dirección que indique la terminal.
+3. Ingresar desde el login de prueba.
+4. Entrar al módulo correspondiente desde el menú.
+5. Modificar el archivo del módulo.
+6. Guardar los cambios.
+7. Volver al navegador y revisar si se ve correctamente.
+
+Archivos principales por grupo:
+
+```txt
+Grupo 1: frontend/src/modulos/autenticacion/paginas/Inicio.jsx
+Grupo 2: frontend/src/modulos/laboratorio/paginas/Laboratorio.jsx
+Grupo 3: frontend/src/modulos/comedor/paginas/Comedor.jsx
+Grupo 4: frontend/src/modulos/notebooks/paginas/Notebooks.jsx
+```
+
+Para empezar, conviene modificar textos visibles, campos del formulario, opciones y columnas de la tabla.
+
 ## Módulos
 
 El sistema se organiza como un único proyecto con varios módulos:

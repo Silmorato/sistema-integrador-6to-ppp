@@ -4,14 +4,14 @@ Proyecto integrador de sexto año para construir un prototipo frontend de un sis
 
 ## Objetivo
 
-Crear un sitio navegable con HTML y CSS para representar un sistema que permita gestionar distintos movimientos de la escuela:
+Crear un sitio base con HTML y CSS para representar un sistema que permita gestionar distintos movimientos de la escuela:
 
 - Acceso al sistema y usuarios.
 - Turnos de laboratorio.
 - Turnos de comedor.
 - Notebooks, accesorios y estados de uso o reparación.
 
-En esta etapa no vamos a trabajar con backend ni base de datos. El objetivo es armar la estructura visual del sistema.
+En esta etapa no vamos a trabajar con backend ni base de datos. El objetivo es que cada grupo construya la estructura visual de su módulo.
 
 La carpeta `backend/` queda incluida para una etapa futura, pero por ahora no deben modificarla.
 
@@ -36,6 +36,17 @@ sistema-integrador-6to-ppp/
   docs/
 ```
 
+## Estado Inicial Del Proyecto
+
+El proyecto está intencionalmente incompleto.
+
+La idea es que cada grupo construya su parte:
+
+- El `index.html` tiene una pantalla inicial simple.
+- El grupo 1 debe crear el menú y los accesos a los módulos.
+- Cada módulo tiene un archivo HTML base para empezar.
+- El archivo `css/estilos.css` tiene algunos estilos generales.
+
 ## Cómo Ver El Proyecto
 
 Opción simple:
@@ -58,7 +69,7 @@ Guía para estudiantes:
 ## Dónde Trabaja Cada Grupo
 
 ```txt
-Grupo 1: modulos/autenticacion/
+Grupo 1: index.html y modulos/autenticacion/
 Grupo 2: modulos/laboratorio/
 Grupo 3: modulos/comedor/
 Grupo 4: modulos/notebooks/
@@ -68,10 +79,11 @@ La carpeta `css/` tiene los estilos generales del proyecto. Si un grupo necesita
 
 ## Qué Puede Modificar Cada Grupo
 
-Para comenzar, cada grupo puede modificar:
+Para comenzar, cada grupo puede agregar o modificar:
 
 - Títulos.
 - Párrafos.
+- Enlaces de navegación.
 - Formularios.
 - Nombres de campos.
 - Opciones de listas.

@@ -15,84 +15,43 @@ body {
 .encabezado {
   background: #17324d;
   color: white;
-  padding: 48px 24px;
-}
-
-.encabezado div,
-.contenedor {
-  margin: 0 auto;
-  max-width: 1100px;
+  padding: 40px 24px;
 }
 
 .encabezado h1 {
-  font-size: 42px;
+  font-size: 40px;
   margin: 0 0 12px;
 }
 
 .encabezado p {
-  font-size: 18px;
   line-height: 1.5;
   margin: 0;
-  max-width: 760px;
 }
 
 .etiqueta {
-  color: #2563eb;
+  color: #93c5fd;
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0;
   margin: 0 0 8px;
   text-transform: uppercase;
 }
 
-.encabezado .etiqueta {
-  color: #93c5fd;
-}
-
 .contenedor {
+  margin: 0 auto;
+  max-width: 1000px;
   padding: 28px 20px;
 }
 
-.panel,
-.tarjeta {
+.panel {
   background: white;
   border: 1px solid #dbe3ef;
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-}
-
-.panel {
   padding: 24px;
 }
 
 .panel h2 {
   font-size: 30px;
   margin: 0 0 10px;
-}
-
-.panel p,
-.tarjeta p {
-  line-height: 1.5;
-}
-
-.grilla-modulos {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 24px;
-}
-
-.tarjeta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 220px;
-  padding: 20px;
-}
-
-.tarjeta h3 {
-  font-size: 22px;
-  margin: 0 0 8px;
 }
 
 a,
@@ -111,118 +70,4 @@ button {
 a:hover,
 button:hover {
   background: #1d4ed8;
-}
-
-.barra-superior {
-  align-items: center;
-  background: #17324d;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-between;
-  padding: 16px 24px;
-}
-
-.barra-superior h1 {
-  font-size: 22px;
-  margin: 0;
-}
-
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.menu a {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.menu a:hover {
-  background: #2563eb;
-}
-
-.formulario {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  margin-top: 16px;
-}
-
-label {
-  display: grid;
-  gap: 6px;
-  font-weight: 700;
-}
-
-input,
-select,
-textarea {
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font: inherit;
-  padding: 10px;
-}
-
-textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-
-table {
-  border-collapse: collapse;
-  margin-top: 16px;
-  width: 100%;
-}
-
-th,
-td {
-  border-bottom: 1px solid #e2e8f0;
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background: #f8fafc;
-}
-
-.estado {
-  border-radius: 999px;
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 5px 9px;
-}
-
-.pendiente {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.confirmado,
-.disponible {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.cancelado,
-.reparacion {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.uso {
-  background: #dbeafe;
-  color: #1e40af;
-}
-
-@media (max-width: 720px) {
-  .encabezado h1 {
-    font-size: 32px;
-  }
-
-  .panel {
-    padding: 18px;
-  }
 }

@@ -13,6 +13,8 @@ Crear un sitio navegable con HTML y CSS para representar un sistema que permita 
 
 En esta etapa no vamos a trabajar con backend ni base de datos. El objetivo es armar la estructura visual del sistema.
 
+La carpeta `backend/` queda incluida para una etapa futura, pero por ahora no deben modificarla.
+
 ## Estructura Del Proyecto
 
 ```txt
@@ -30,6 +32,7 @@ sistema-integrador-6to-ppp/
       comedor.html
     notebooks/
       notebooks.html
+  backend/
   docs/
 ```
 

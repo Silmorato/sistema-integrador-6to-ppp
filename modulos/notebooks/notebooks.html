@@ -15,10 +15,35 @@
 
     <main class="contenedor">
       <section class="panel">
-        <h2>Construir este módulo</h2>
-        <p>Agregar formulario, listado, estados y acciones del módulo.</p>
-        <p><a href="../../index.html">Volver al inicio</a></p>
+        <h2>Gestion de notebooks</h2>
+
+        <form>
+
+          <label for="numero">Numero:</label>
+          <input type="text" id="numero" name="numero">
+
+          <label for="marca">Marca:</label>
+          <input type="text" id="marca" name="marca">
+
+          <label for="modelo">Modelo:</label>
+          <input type="text" id="modelo" name="modelo">
+
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" name="estado">
+
+          <select id="estado" name="estado">
+
+              <option value="disponible">Disponible</option>
+              <option value="prestada">Prestada</option>
+              <option value="reparacion">En reparacion</option>
+          </select>
+
+              <button type="submit">Guardar</button>
+
+        </form>
+
       </section>
+    
     </main>
   </body>
 </html>

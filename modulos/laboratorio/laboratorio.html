@@ -1,24 +1,517 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laboratorio</title>
-    <link rel="stylesheet" href="../../css/estilos.css" />
-  </head>
-  <body>
-    <header class="encabezado">
-      <p class="etiqueta">Grupo 2</p>
-      <h1>Laboratorio</h1>
-      <p>Módulo para turnos de laboratorio.</p>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="general.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión General de Laboratorios</title>
+
+    
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <span class="logo-icon">⚗</span>
+
+            <h1>
+                Gestión General De<br>
+                Laboratorios
+            </h1>
+        </div>
+
+        <div class="header-icons">
+            <button title="Notificaciones" aria-label="Notificaciones">
+                ♧
+            </button>
+
+            <button title="Perfil" aria-label="Perfil">
+                ◉
+            </button>
+        </div>
     </header>
 
-    <main class="contenedor">
-      <section class="panel">
-        <h2>Construir este módulo</h2>
-        <p>Agregar formulario, listado, estados y acciones del módulo.</p>
-        <p><a href="../../index.html">Volver al inicio</a></p>
-      </section>
-    </main>
-  </body>
+    <div class="contenedor">
+
+
+        <aside>
+            <nav class="menu">
+
+                <button class="activo" onclick="mostrarSeccion('inicio', this)">
+                    <span class="icono">⌂</span>
+                    Inicio
+                </button>
+
+                <button onclick="mostrarSeccion('calendario', this)">
+                    <span class="icono">▦</span>
+                    Calendario
+                </button>
+
+                <button onclick="mostrarSeccion('contactos', this)">
+                    <span class="icono">♧</span>
+                    Contactos
+                </button>
+
+                <button onclick="mostrarSeccion('material', this)">
+                    <span class="icono">⬡</span>
+                    Material
+                </button>
+
+                <button onclick="mostrarSeccion('ajustes', this)">
+                    <span class="icono">⚙</span>
+                    Ajustes
+                </button>
+
+            </nav>
+        </aside>
+
+        <main>
+
+            <section id="inicio" class="contenido-seccion visible">
+
+                <h2>Inicio</h2>
+
+                <p class="descripcion">
+                    Bienvenido al sistema de gestión de laboratorios.
+                </p>
+
+                <div class="tarjeta">
+
+                    <div class="tarjeta-icono">⚗</div>
+
+                    <div>
+                        <h3>Selecciona una opción del menú</h3>
+
+                        <p>
+                            Para comenzar, elige una sección en la
+                            barra lateral.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="calendario" class="contenido-seccion">
+
+                <h2>Calendario</h2>
+
+                <p class="descripcion">
+                    Consulta y organiza las reservas de los laboratorios.
+                </p>
+
+                <form class="formulario" onsubmit="guardarReserva(event)">
+
+                    <label>
+                        Laboratorio
+
+                        <select id="laboratorio" required>
+                            <option value="">Seleccionar laboratorio</option>
+                            <option>Laboratorio de Informática 1</option>
+                            <option>Laboratorio de Informática 2</option>
+                            <option>Laboratorio de Ciencias</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Fecha de reserva
+
+                        <input type="date" id="fecha" required>
+                    </label>
+
+                    <label>
+                        Hora de inicio
+
+                        <input type="time" id="hora" required>
+                    </label>
+
+                    <label>
+                        Responsable
+
+                        <input type="text" id="responsable"
+                               placeholder="Nombre del responsable" required>
+                    </label>
+
+                    <button class="boton" type="submit">
+                        Registrar reserva
+                    </button>
+
+                    <p id="mensajeReserva" class="mensaje"></p>
+
+                </form>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Laboratorio</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Responsable</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaReservas">
+                            <tr>
+                                <td colspan="4">
+                                    Todavía no hay reservas registradas.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <section id="contactos" class="contenido-seccion">
+
+                <h2>Contactos</h2>
+
+                <p class="descripcion">
+                    Información de los responsables de los laboratorios.
+                </p>
+
+                <form class="formulario" onsubmit="guardarContacto(event)">
+
+                    <label>
+                        Nombre completo
+
+                        <input type="text" id="nombreContacto"
+                               placeholder="Nombre y apellido" required>
+                    </label>
+
+                    <label>
+                        Correo electrónico
+
+                        <input type="email" id="correoContacto"
+                               placeholder="correo@ejemplo.com" required>
+                    </label>
+
+                    <label>
+                        Teléfono
+
+                        <input type="tel" id="telefonoContacto"
+                               placeholder="Número de teléfono">
+                    </label>
+
+                    <button class="boton" type="submit">
+                        Agregar contacto
+                    </button>
+
+                    <p id="mensajeContacto" class="mensaje"></p>
+
+                </form>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaContactos">
+                            <tr>
+                                <td colspan="3">
+                                    No hay contactos registrados.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+
+            <section id="material" class="contenido-seccion">
+
+                <h2>Material</h2>
+
+                <p class="descripcion">
+                    Consulta y administra los materiales disponibles.
+                </p>
+
+                <form class="formulario" onsubmit="guardarMaterial(event)">
+
+                    <label>
+                        Nombre del material
+
+                        <input type="text" id="nombreMaterial"
+                               placeholder="Ej. Computadora" required>
+                    </label>
+
+                    <label>
+                        Cantidad disponible
+
+                        <input type="number" id="cantidadMaterial"
+                               min="0" placeholder="Cantidad" required>
+                    </label>
+
+                    <label>
+                        Estado
+
+                        <select id="estadoMaterial">
+                            <option>Disponible</option>
+                            <option>En reparación</option>
+                            <option>Fuera de servicio</option>
+                        </select>
+                    </label>
+
+                    <button class="boton" type="submit">
+                        Agregar material
+                    </button>
+
+                    <p id="mensajeMaterial" class="mensaje"></p>
+
+                </form>
+
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Cantidad</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaMaterial">
+                            <tr>
+                                <td colspan="3">
+                                    No hay materiales registrados.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+
+            <section id="ajustes" class="contenido-seccion">
+
+                <h2>Ajustes</h2>
+
+                <p class="descripcion">
+                    Configuración general del sistema.
+                </p>
+
+                <div class="ajuste-opcion">
+                    <h3>Gestión de laboratorios</h3>
+                    <p>
+                        Administra los espacios, los recursos y las reservas
+                        de los laboratorios escolares.
+                    </p>
+                </div>
+
+                <div class="ajuste-opcion">
+                    <h3>Información del sistema</h3>
+                    <p>
+                        Sistema de Gestión General de Laboratorios.
+                        Proyecto escolar de Programación.
+                    </p>
+                </div>
+
+                <div class="ajuste-opcion">
+                    <h3>Restablecer datos de prueba</h3>
+                    <p>
+                        Elimina los registros creados durante esta sesión.
+                    </p>
+
+                    <br>
+
+                    <button class="boton" onclick="restablecerDatos()">
+                        Restablecer datos
+                    </button>
+                </div>
+
+                <p id="mensajeAjustes" class="mensaje"></p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script>
+
+        function mostrarSeccion(id, boton) {
+
+            const secciones = document.querySelectorAll(
+                '.contenido-seccion'
+            );
+
+            secciones.forEach(seccion => {
+                seccion.classList.remove('visible');
+            });
+
+            document.getElementById(id).classList.add('visible');
+
+            const botones = document.querySelectorAll('.menu button');
+
+            botones.forEach(elemento => {
+                elemento.classList.remove('activo');
+            });
+
+            boton.classList.add('activo');
+        }
+
+
+        // Recuperar los datos guardados en este navegador
+        let reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+        let contactos = JSON.parse(localStorage.getItem('contactos')) || [];
+        let materiales = JSON.parse(localStorage.getItem('materiales')) || [];
+
+        function mostrarReservas() {
+            const tabla = document.getElementById('tablaReservas');
+            tabla.innerHTML = '';
+
+            if (reservas.length === 0) {
+                tabla.innerHTML = '<tr><td colspan="4">Todavía no hay reservas registradas.</td></tr>';
+                return;
+            }
+
+            reservas.forEach(reserva => {
+                const fila = tabla.insertRow();
+                [reserva.laboratorio, reserva.fecha, reserva.hora, reserva.responsable]
+                    .forEach(valor => {
+                        const celda = fila.insertCell();
+                        celda.textContent = valor;
+                    });
+            });
+        }
+
+        function guardarReserva(event) {
+            event.preventDefault();
+
+            const reserva = {
+                laboratorio: document.getElementById('laboratorio').value,
+                fecha: document.getElementById('fecha').value,
+                hora: document.getElementById('hora').value,
+                responsable: document.getElementById('responsable').value.trim()
+            };
+
+            reservas.push(reserva);
+            localStorage.setItem('reservas', JSON.stringify(reservas));
+            mostrarReservas();
+
+            document.getElementById('mensajeReserva').textContent =
+                'Reserva agregada y guardada correctamente.';
+            event.target.reset();
+        }
+
+        function mostrarContactos() {
+            const tabla = document.getElementById('tablaContactos');
+            tabla.innerHTML = '';
+
+            if (contactos.length === 0) {
+                tabla.innerHTML = '<tr><td colspan="3">No hay contactos registrados.</td></tr>';
+                return;
+            }
+
+            contactos.forEach(contacto => {
+                const fila = tabla.insertRow();
+                [contacto.nombre, contacto.correo, contacto.telefono || 'No especificado']
+                    .forEach(valor => {
+                        const celda = fila.insertCell();
+                        celda.textContent = valor;
+                    });
+            });
+        }
+
+        function guardarContacto(event) {
+            event.preventDefault();
+
+            const contacto = {
+                nombre: document.getElementById('nombreContacto').value.trim(),
+                correo: document.getElementById('correoContacto').value.trim(),
+                telefono: document.getElementById('telefonoContacto').value.trim()
+            };
+
+            contactos.push(contacto);
+            localStorage.setItem('contactos', JSON.stringify(contactos));
+            mostrarContactos();
+
+            document.getElementById('mensajeContacto').textContent =
+                'Contacto agregado y guardado correctamente.';
+            event.target.reset();
+        }
+
+        function mostrarMateriales() {
+            const tabla = document.getElementById('tablaMaterial');
+            tabla.innerHTML = '';
+
+            if (materiales.length === 0) {
+                tabla.innerHTML = '<tr><td colspan="3">No hay materiales registrados.</td></tr>';
+                return;
+            }
+
+            materiales.forEach(material => {
+                const fila = tabla.insertRow();
+                [material.nombre, material.cantidad, material.estado]
+                    .forEach(valor => {
+                        const celda = fila.insertCell();
+                        celda.textContent = valor;
+                    });
+            });
+        }
+
+        function guardarMaterial(event) {
+            event.preventDefault();
+
+            const material = {
+                nombre: document.getElementById('nombreMaterial').value.trim(),
+                cantidad: document.getElementById('cantidadMaterial').value,
+                estado: document.getElementById('estadoMaterial').value
+            };
+
+            materiales.push(material);
+            localStorage.setItem('materiales', JSON.stringify(materiales));
+            mostrarMateriales();
+
+            document.getElementById('mensajeMaterial').textContent =
+                'Material agregado y guardado correctamente.';
+            event.target.reset();
+        }
+
+        function restablecerDatos() {
+            const confirmar = confirm(
+                '¿Seguro que quieres eliminar todos los datos guardados?'
+            );
+
+            if (!confirmar) {
+                return;
+            }
+
+            reservas = [];
+            contactos = [];
+            materiales = [];
+
+            localStorage.removeItem('reservas');
+            localStorage.removeItem('contactos');
+            localStorage.removeItem('materiales');
+
+            mostrarReservas();
+            mostrarContactos();
+            mostrarMateriales();
+
+            document.getElementById('mensajeReserva').textContent = '';
+            document.getElementById('mensajeContacto').textContent = '';
+            document.getElementById('mensajeMaterial').textContent = '';
+            document.getElementById('mensajeAjustes').textContent =
+                'Todos los datos guardados fueron eliminados.';
+        }
+
+        // Mostrar todos los registros guardados al abrir la página
+        mostrarReservas();
+        mostrarContactos();
+        mostrarMateriales();
+
+    </script>
+
+</body>
 </html>

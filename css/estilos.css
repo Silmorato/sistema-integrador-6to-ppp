@@ -1,73 +1,121 @@
-:root {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #1f2937;
-  background: #eef3f8;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e293b;
+
 }
 
-.encabezado {
-  background: #17324d;
-  color: white;
-  padding: 40px 24px;
+/* MENU */
+
+.encabezado-registro {
+    background-color: #0f172a;
+    padding: 10px 40px;
 }
 
-.encabezado h1 {
-  font-size: 40px;
-  margin: 0 0 12px;
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.encabezado p {
-  line-height: 1.5;
-  margin: 0;
+.menu h2 {
+    color: white;
+    font-size: 22px;
 }
 
-.etiqueta {
-  color: #93c5fd;
-  font-size: 13px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  text-transform: uppercase;
+.enlaces {
+    display: flex;
+    gap: 20px;
 }
 
-.contenedor {
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 28px 20px;
+.enlaces a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.panel {
-  background: white;
-  border: 1px solid #dbe3ef;
-  border-radius: 8px;
-  padding: 24px;
+.enlaces a:hover {
+    background-color: #2563eb;
 }
 
-.panel h2 {
-  font-size: 30px;
-  margin: 0 0 10px;
+/* BIENVENIDA */
+
+.contenedor-inicio {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
 }
 
-a,
-button {
-  background: #2563eb;
-  border: 0;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font: inherit;
-  padding: 10px 14px;
-  text-decoration: none;
+.bienvenida {
+    text-align: center;
+    color: white;
+    margin-bottom: 55px;
 }
 
-a:hover,
-button:hover {
-  background: #1d4ed8;
+.bienvenida h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
+
+.bienvenida h2 {
+    font-size: 23px;
+    color: #60a5fa;
+    font-weight: normal;
+}
+
+.bienvenida p {
+    font-size: 17px;
+    color: #cbd5e1;
+    margin-top: 20px;
+}
+
+/* TARJETAS */
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.tarjeta {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+
+    padding: 35px 20px;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    border-color: #3b82f6;
+    background-color: #172554;
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: #60a5fa;
+}
+
+.tarjeta p {
+    font-size: 15px;
+    color: #cbd5e1;
+}
+
+.pie {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+}
+

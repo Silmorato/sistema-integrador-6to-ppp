@@ -1,0 +1,73 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background: #eef3f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.encabezado {
+  background: #17324d;
+  color: white;
+  padding: 40px 24px;
+}
+
+.encabezado h1 {
+  font-size: 40px;
+  margin: 0 0 12px;
+}
+
+.encabezado p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.etiqueta {
+  color: #93c5fd;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.contenedor {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 28px 20px;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.panel h2 {
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+a,
+button {
+  background: #2563eb;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  padding: 10px 14px;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  background: #1d4ed8;
+}

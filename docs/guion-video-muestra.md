@@ -75,7 +75,7 @@ Grupo 4:
 Ideas para decir:
 
 ```txt
-Para construir el proyecto usamos HTML, CSS, JavaScript, React y Vite.
+Para construir el proyecto usamos HTML y CSS.
 Tambien usamos Git y GitHub para guardar versiones y organizar el trabajo.
 ```
 
@@ -98,7 +98,7 @@ Cada grupo trabaja sobre una parte del sistema para despues integrarlo en una mi
 Mostrar estructura:
 
 ```txt
-frontend/src/modulos/
+modulos/
   autenticacion/
   laboratorio/
   comedor/
@@ -123,7 +123,7 @@ Ideas para decir:
 
 ```txt
 Este proyecto es una primera version del sistema.
-Actualmente funciona como prototipo frontend, pero podria crecer con un backend, una base de datos y usuarios reales.
+Actualmente funciona como prototipo frontend en HTML y CSS, pero podria crecer con JavaScript, un backend, una base de datos y usuarios reales.
 ```
 
 Mostrar:

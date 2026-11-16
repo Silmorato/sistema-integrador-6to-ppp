@@ -1,21 +1,22 @@
 # Backend
 
-Esta carpeta queda reservada para una segunda etapa.
+Esta carpeta queda reservada para una segunda etapa del proyecto.
 
-Por ahora el proyecto se enfoca en el frontend y usa datos simulados.
+Por ahora el trabajo principal es el prototipo frontend con HTML y CSS.
 
-Si mas adelante se construye una API, podria organizarse asi:
+Más adelante, si el tiempo alcanza, acá se podría construir una API para guardar y consultar datos reales.
+
+## Posible Organización Futura
 
 ```txt
 backend/
-  src/
-    rutas/
-    controladores/
-    modelos/
-    datos/
+  rutas/
+  controladores/
+  modelos/
+  datos/
 ```
 
-Endpoints posibles:
+## Posibles Rutas De API
 
 ```txt
 /api/usuarios
@@ -23,3 +24,4 @@ Endpoints posibles:
 /api/comedor/reservas
 /api/notebooks/equipos
 ```
+

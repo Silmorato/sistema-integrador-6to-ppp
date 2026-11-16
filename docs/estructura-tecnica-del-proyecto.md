@@ -1,83 +1,91 @@
-# Estructura Tecnica Del Proyecto
+# Estructura Técnica Del Proyecto
 
-## Recomendacion
+## Recomendación
 
-Usar un solo repositorio de GitHub, pero separar el frontend y el backend en carpetas diferentes.
+Usar un solo repositorio de GitHub con una estructura simple basada en HTML y CSS.
 
 ```txt
-api-integradora/
-  frontend/
-  backend/
+sistema-integrador-6to-ppp/
+  index.html
+  css/
+  modulos/
   docs/
 ```
 
-Esto permite que todos trabajen sobre el mismo proyecto, pero sin mezclar responsabilidades.
+Esta estructura permite que los grupos entiendan rápido dónde trabajar y puedan abrir el proyecto sin instalar herramientas extra.
 
-## Por Que No Hacer Todo Mezclado
-
-Si el frontend y el backend quedan mezclados desde el inicio, puede ser mas dificil para los grupos entender donde va cada cosa.
-
-Como en esta etapa se va a construir principalmente el frontend, conviene que el trabajo real este en:
+## Estructura Principal
 
 ```txt
-frontend/
-```
-
-Y que el backend quede preparado para una etapa posterior:
-
-```txt
-backend/
-```
-
-## Estructura Del Frontend
-
-```txt
-frontend/
-  src/
-    componentes/
-    datos/
-    estilos/
-    modulos/
-      autenticacion/
-      laboratorio/
-      comedor/
-      notebooks/
+sistema-integrador-6to-ppp/
+  index.html
+  css/
+    estilos.css
+  modulos/
+    autenticacion/
+      login.html
+      usuarios.html
+    laboratorio/
+      laboratorio.html
+    comedor/
+      comedor.html
+    notebooks/
+      notebooks.html
+  docs/
 ```
 
 ## Carpetas Por Grupo
 
 ```txt
-Grupo 1: frontend/src/modulos/autenticacion
-Grupo 2: frontend/src/modulos/laboratorio
-Grupo 3: frontend/src/modulos/comedor
-Grupo 4: frontend/src/modulos/notebooks
+Grupo 1: modulos/autenticacion
+Grupo 2: modulos/laboratorio
+Grupo 3: modulos/comedor
+Grupo 4: modulos/notebooks
 ```
 
 ## Carpetas Compartidas
 
 ```txt
-frontend/src/componentes
-frontend/src/datos
-frontend/src/estilos
+css/
+docs/
 ```
 
-Estas carpetas son compartidas. No deberian modificarse sin avisar al resto.
+La carpeta `css/` contiene los estilos generales del sistema. Si un grupo modifica esa carpeta, puede afectar visualmente a todos los módulos.
+
+La carpeta `docs/` contiene consignas, guías y documentación del proyecto.
+
+## Cómo Ver El Proyecto
+
+Opción simple:
+
+```txt
+Abrir index.html con doble clic.
+```
+
+Opción recomendada:
+
+```txt
+Abrir la carpeta en Visual Studio Code.
+Usar la extensión Live Server.
+Abrir index.html con Open with Live Server.
+```
 
 ## Flujo De Trabajo Sugerido
 
-1. Cada grupo trabaja en su modulo.
-2. Primero se hacen pantallas simples.
-3. Despues se agregan formularios y listados.
-4. Los datos se simulan con archivos JavaScript.
-5. Mas adelante se puede conectar con una API real.
+1. Cada grupo trabaja en su módulo.
+2. Primero se modifican textos y estructura HTML.
+3. Después se agregan campos de formularios.
+4. Luego se ajustan tablas y datos de ejemplo.
+5. Más adelante se puede sumar JavaScript o backend si el tiempo alcanza.
 
-## Decision Sobre Frontend Y Backend
+## Decisión Técnica
 
-La recomendacion para este proyecto es:
+La recomendación para esta etapa es:
 
 ```txt
 Un solo repositorio.
-Frontend y backend separados por carpetas.
-Primera etapa: frontend.
-Segunda etapa: backend, si el tiempo alcanza.
+HTML y CSS como base.
+Sin Node.
+Sin npm install.
+Sin frameworks por ahora.
 ```

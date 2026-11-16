@@ -4,21 +4,306 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comedor</title>
-    <link rel="stylesheet" href="../../css/estilos.css" />
+    <link rel="stylesheet" href="comedor.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    
+    </style>
   </head>
-  <body>
-    <header class="encabezado">
-      <p class="etiqueta">Grupo 3</p>
-      <h1>Comedor</h1>
-      <p>Módulo para reservas o turnos del comedor.</p>
-    </header>
+ <body>
 
-    <main class="contenedor">
-      <section class="panel">
-        <h2>Construir este módulo</h2>
-        <p>Agregar formulario, listado, estados y acciones del módulo.</p>
-        <p><a href="../../index.html">Volver al inicio</a></p>
-      </section>
+<input type="radio" name="pagina" id="inicio" checked>
+<input type="radio" name="pagina" id="alumnos">
+<input type="radio" name="pagina" id="asistencia">
+<input type="radio" name="pagina" id="consulta">
+<input type="radio" name="pagina" id="quejas">
+<input type="radio" name="pagina" id="consultaQuejas">
+
+<div class="contenedor">
+
+    <aside class="sidebar">
+        <div class="logo">
+            <p> comedor escolar</p>
+        </div>
+
+        <h3>Menú principal</h3>
+
+        <ul class="menu">
+            <li><label for="inicio">Inicio</label></li>
+            <li><label for="alumnos">Alumnos</label></li>
+            <li><label for="asistencia">Registrar asistencia</label></li>
+            <li><label for="consulta">Consultar asistencia</label></li>
+            <li><label for="quejas">Libro de quejas</label></li>
+            <li><label for="consultaQuejas">Consultar quejas</label></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <h2 class="titulo-pagina titulo-inicio">Inicio</h2>
+            <h2 class="titulo-pagina titulo-alumnos">Alumnos</h2>
+            <h2 class="titulo-pagina titulo-asistencia">Registrar asistencia</h2>
+            <h2 class="titulo-pagina titulo-consulta">Consulta de asistencia</h2>
+            <h2 class="titulo-pagina titulo-quejas">Libro de quejas</h2>
+            <h2 class="titulo-pagina titulo-consulta-quejas">Consulta de quejas</h2>
+        </header>
+
+        <div class="contenido">
+
+            <!-- INICIO -->
+            <section class="pantalla pantalla-inicio">
+                <div class="bienvenida">
+                    <h2>Bienvenido a El Bocado</h2>
+                    <p>
+                        Sistema de gestión del comedor escolar. Desde aquí podés
+                        consultar las secciones de alumnos, asistencias y quejas
+                        para mantener organizada la información.
+                    </p>
+                </div>
+
+                <div class="estadisticas">
+                    <div class="tarjeta">
+                        <h3>Total de alumnos</h3>
+                        <div class="numero">0</div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <h3>Presentes hoy</h3>
+                        <div class="numero">0</div>
+                    </div>
+
+                    <div class="tarjeta">
+                        <h3>Quejas pendientes</h3>
+                        <div class="numero">0</div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Información del comedor</h3>
+                    <p><strong>Nombre:</strong> El Bocado</p>
+                    <p><strong>Servicio:</strong> Comedor escolar</p>
+                    <p><strong>Objetivo:</strong> Organizar alumnos, asistencias y quejas.</p>
+                </div>
+            </section>
+
+            <!-- ALUMNOS -->
+            <section class="pantalla pantalla-alumnos">
+                <h2 class="seccion-titulo">Gestión de alumnos</h2>
+
+                <div class="panel">
+                    <h3>Registrar alumno</h3>
+
+                    <form class="formulario">
+                        <div class="campo">
+                            <label for="nombre">Nombre y apellido</label>
+                            <input id="nombre" type="text" placeholder="Ej.: Juan Pérez">
+                        </div>
+
+                        <div class="campo">
+                            <label for="curso">Curso</label>
+                            <input id="curso" type="text" placeholder="Ej.: 3° A">
+                        </div>
+
+                        <div class="campo completo">
+                            <button class="boton" type="button">Registrar alumno</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <h3>Alumnos registrados</h3>
+
+                    <div class="barra-acciones">
+                        <input type="search" placeholder="Buscar alumno...">
+                    </div>
+
+                    <div class="tabla-contenedor">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre y apellido</th>
+                                    <th>Curso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="vacio">
+                                        Los alumnos registrados aparecerán aquí.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REGISTRAR ASISTENCIA -->
+            <section class="pantalla pantalla-asistencia">
+                <h2 class="seccion-titulo">Registrar asistencia</h2>
+
+                <div class="panel">
+                    <h3>Datos de asistencia</h3>
+
+                    <form class="formulario">
+                        <div class="campo">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha">
+                        </div>
+
+                        <div class="campo">
+                            <label for="alumnoAsistencia">Alumno</label>
+                            <select id="alumnoAsistencia">
+                                <option value="">Seleccioná un alumno</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="estado">Estado</label>
+                            <select id="estado">
+                                <option>Presente</option>
+                                <option>Ausente</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label>&nbsp;</label>
+                            <button class="boton" type="button">Guardar asistencia</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- CONSULTAR ASISTENCIA -->
+            <section class="pantalla pantalla-consulta">
+                <h2 class="seccion-titulo">Consulta de asistencia</h2>
+
+                <div class="panel">
+                    <h3>Buscar registros</h3>
+
+                    <div class="barra-acciones">
+                        <input type="date">
+
+                        <select>
+                            <option>Todos los estados</option>
+                            <option>Presente</option>
+                            <option>Ausente</option>
+                        </select>
+
+                        <button class="boton" type="button">Buscar</button>
+                    </div>
+
+                    <div class="tabla-contenedor">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Alumno</th>
+                                    <th>Curso</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="vacio">
+                                        Los registros de asistencia aparecerán aquí.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIBRO DE QUEJAS -->
+            <section class="pantalla pantalla-quejas">
+                <h2 class="seccion-titulo">Libro de quejas</h2>
+
+                <div class="panel">
+                    <h3>Registrar queja o sugerencia</h3>
+
+                    <form class="formulario">
+                        <div class="campo">
+                            <label for="fechaQueja">Fecha</label>
+                            <input type="date" id="fechaQueja">
+                        </div>
+
+                        <div class="campo">
+                            <label for="reclamante">Nombre del reclamante</label>
+                            <input type="text" id="reclamante" placeholder="Nombre y apellido">
+                        </div>
+
+                        <div class="campo completo">
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria">
+                                <option value="">Seleccioná una categoría</option>
+                                <option>Comida</option>
+                                <option>Atención</option>
+                                <option>Higiene</option>
+                                <option>Instalaciones</option>
+                                <option>Sugerencia</option>
+                                <option>Otra</option>
+                            </select>
+                        </div>
+
+                        <div class="campo completo">
+                            <label for="descripcion">Descripción</label>
+                            <textarea id="descripcion" placeholder="Escribí el motivo de la queja o sugerencia..."></textarea>
+                        </div>
+
+                        <div class="campo completo">
+                            <button class="boton" type="button">Registrar queja</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- CONSULTAR QUEJAS -->
+            <section class="pantalla pantalla-consulta-quejas">
+                <h2 class="seccion-titulo">Consulta de quejas</h2>
+
+                <div class="panel">
+                    <h3>Quejas registradas</h3>
+
+                    <div class="barra-acciones">
+                        <input type="search" placeholder="Buscar por nombre o descripción...">
+
+                        <select>
+                            <option>Todos los estados</option>
+                            <option>Pendiente</option>
+                            <option>Resuelta</option>
+                        </select>
+                    </div>
+
+                    <div class="tabla-contenedor">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Reclamante</th>
+                                    <th>Categoría</th>
+                                    <th>Descripción</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="5" class="vacio">
+                                        Las quejas registradas aparecerán aquí.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="pie">
+            El Bocado - Sistema de gestión del comedor escolar
+        </div>
     </main>
-  </body>
+</div>
+
+</body>
 </html>

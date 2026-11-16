@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang_"es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes de Notebooks</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+            background-color: #1e293b;
+            color:white;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #375a88;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #375a88;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid white;
+            text-align: center;
+        }
+
+        tr:hover {
+            background: #eaf0f7;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <h1>Reportes de Notebooks</h1>
+
+        <section class="panel">
+            <h2>Resumen</h2>
+
+            <p>Total de Notebooks: <strong id="total">0</strong></p>
+
+            <p>Disponibles: <strong id="disponibles">0</strong></p>
+
+            <p>En uso: <strong id="enUso">0</strong></p>
+
+              <p>En uso: <strong id="fuera">0</strong></p>
+
+        </section>
+
+        <section class="panel">
+            <h2>Listado de Notebooks</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>N. °</th>
+                        <th>Notebook</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaNoteboks">
+                </tbody>
+            </table>
+            </section>
+
+            <button onclick="window.print()">
+                imprimir reporte
+            </button>
+
+            </div>
+
+            <script>
+                const notebooks = [
+                    { numero: 1, nombre: "Notebook 1" , estado: "Disponible"},
+                    { numero: 2, nombre: "Notebook 2" , estado: "En uso"}, 
+                    {numero: 3, nombre: "Notebook 3", estado: "Fuera de Servicio"}
+                ];
+
+                const lista =
+                document.getElementById("ListaNotebooks");
+
+                notebooks.forEach(notebook => {
+                    const fila = document.createElement("tr");
+
+                    fila.innerHTML = `
+                    <td>${notebook.numero}</td>
+                    <td>${notebook.nombre}</td>
+                    <td>${notebook.estado}</td>
+                    `;
+
+                lista.appendChild(fila);
+            });
+
+            document.getElemenrById("disponibles").textContent =
+            notebooks.filter(n => n.estado === "Disponible").lenght;
+
+            document.getElemenrById("enUso").textContent =
+            notebooks.filter(n => n.estado === "En Uso").lenght;
+
+              document.getElemenrById("fuera").textContent =
+            notebooks.filter(n => n.estado === "Fuera de Servicio").lenght;
+            </script>
+</body>
+</html>

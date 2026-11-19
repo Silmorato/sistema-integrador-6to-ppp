@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes de Notebooks</title>
+
+ <style>
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e293b;
+    color: #334155;
+}
+
+/* MENU */
+
+.encabezado-registro {
+    background-color: #0f172a;
+    padding: 15px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu h2 {
+    color: white;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.enlaces {
+    display: flex;
+    gap: 12px;
+}
+
+.enlaces a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.enlaces a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+/* TITULO PRINCIPAL */
+
+.contenedor h1 {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* PANELES */
+
+.panel {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.panel h2 {
+    color: #0f172a;
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+/* RESUMEN */
+
+.panel:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.panel:first-of-type h2 {
+    grid-column: 1 / -1;
+}
+
+.panel:first-of-type p {
+    background-color: #f1f5f9;
+    padding: 20px 12px;
+    border-radius: 10px;
+    text-align: center;
+    color: #475569;
+    font-size: 14px;
+    margin: 0;
+    border-bottom: 3px solid #2563eb;
+}
+
+.panel:first-of-type strong {
+    display: block;
+    color: #1e40af;
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+/* TABLA */
+
+.panel table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.panel th {
+    background-color: #0f172a;
+    color: white;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.panel td {
+    padding: 15px;
+    text-align: center;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+.panel tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+.panel tbody tr:hover {
+    background-color: #dbeafe;
+    transition: 0.2s;
+}
+
+/* BOTON IMPRIMIR */
+
+.contenedor > button {
+    display: block;
+    width: 220px;
+    margin: 25px auto;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contenedor > button:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* PIE DE PAGINA */
+
+.pie {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 22px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+/* IMPRESION */
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .encabezado-registro,
+    .pie,
+    .contenedor > button {
+        display: none;
+    }
+
+    .contenedor {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .contenedor h1 {
+        color: black;
+    }
+
+    .panel {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ADAPTACION A CELULARES */
+
+@media (max-width: 700px) {
+    .encabezado-registro {
+        padding: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .enlaces {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .panel:first-of-type {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor {
+        padding: 12px;
+    }
+
+    .panel {
+        padding: 18px;
+        overflow-x: auto;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+     <header class="encabezado-registro">
+
+            <nav class="menu">  
+
+                <h2>Gestión de Notebooks</h2>
+
+                <div class="enlaces">
+                    <a href="inicio-noteboks.html">Inicio</a>
+                    <a href="registro-notebooks.html">Registro</a>
+                    <a href="notebooks-list.html">Listado</a>
+                    <a href="reportes.html">Reportes</a>
+                </div>
+
+    </nav>
+
+</header>
+
+    <main>
+
+    <div class="contenedor">
+
+        <h1>Reportes de Notebooks</h1>
+
+        <section class="panel">
+            <h2>Resumen</h2>
+
+            <p>Total de Notebooks: <strong id="total">0</strong></p>
+
+            <p>Disponibles: <strong id="disponibles">0</strong></p>
+
+            <p>En uso: <strong id="enUso">0</strong></p>
+
+              <p>En uso: <strong id="fuera">0</strong></p>
+
+        </section>
+
+        <section class="panel">
+            <h2>Listado de Notebooks</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>N. °</th>
+                        <th>Notebook</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaNoteboks">
+                </tbody>
+            </table>
+            </section>
+
+            <button onclick="window.print()">
+                imprimir reporte
+            </button>
+
+            </div>
+        
+            </main>
+
+            <footer class="pie">
+
+        <p>Grupo 4 - Sistema Integrador PPP</p>
+
+    </footer>
+
+
+            <script>
+                const notebooks = [
+                    { numero: 1, nombre: "Notebook 1" , estado: "Disponible"},
+                    { numero: 2, nombre: "Notebook 2" , estado: "En uso"}, 
+                    {numero: 3, nombre: "Notebook 3", estado: "Fuera de Servicio"}
+                ];
+
+                const lista =
+                document.getElementById("ListaNotebooks");
+
+                notebooks.forEach(notebook => {
+                    const fila = document.createElement("tr");
+
+                    fila.innerHTML = `
+                    <td>${notebook.numero}</td>
+                    <td>${notebook.nombre}</td>
+                    <td>${notebook.estado}</td>
+                    `;
+
+                lista.appendChild(fila);
+            });
+
+            document.getElemenrById("disponibles").textContent =
+            notebooks.filter(n => n.estado === "Disponible").lenght;
+
+            document.getElemenrById("enUso").textContent =
+            notebooks.filter(n => n.estado === "En Uso").lenght;
+
+              document.getElemenrById("fuera").textContent =
+            notebooks.filter(n => n.estado === "Fuera de Servicio").lenght;
+            </script>
+</body>
+</html>

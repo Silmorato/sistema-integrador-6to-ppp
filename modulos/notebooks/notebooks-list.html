@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Notebooks</title>
+
+    <link rel="stylesheet" href="estilos-listado.css">
+    <style>
+        
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e293b;
+    color: #334155;
+}
+
+/* MENU */
+
+.encabezado-registro {
+    background-color: #0f172a;
+    padding: 15px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu h2 {
+    color: white;
+    font-size: 23px;
+    margin: 10px 0;
+}
+
+.enlaces {
+    display: flex;
+    gap: 12px;
+}
+
+.enlaces a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.enlaces a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+    max-width: 1100px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+/* TITULOS */
+
+.contenedor h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* RESUMEN */
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    border-bottom: 4px solid #2563eb;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+}
+
+.tarjeta h3 {
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.tarjeta p {
+    color: #1e40af;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* PANELES */
+
+.panel {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.panel h2 {
+    color: #0f172a;
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* BUSCADOR */
+
+#buscarNotebook {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    font-size: 14px;
+}
+
+#buscarNotebook:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* TABLA */
+
+.tabla-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabla-panel th {
+    background-color: #0f172a;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.tabla-panel td {
+    padding: 15px;
+    text-align: center;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+.tabla-panel tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+.tabla-panel tbody tr:hover {
+    background-color: #dbeafe;
+}
+
+/* ESTADOS */
+
+.estado {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estado-disponible {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.estado-en-uso {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.estado-fuera {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* BOTON CAMBIAR */
+
+.btn-cambiar {
+    background-color: #2563eb;
+    color: white;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cambiar:hover {
+    background-color: #1e40af;
+}
+
+/* HISTORIAL */
+
+#listaMovimientos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#listaMovimientos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    margin-bottom: 10px;
+    background-color: #f1f5f9;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    color: #334155;
+    font-size: 14px;
+}
+
+#listaMovimientos .vacio {
+    color: #64748b;
+    border-left-color: #cbd5e1;
+}
+
+.movimiento-hora {
+    color: #64748b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* PIE DE PAGINA */
+
+.pie {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 22px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+/* CELULARES */
+
+@media (max-width: 800px) {
+
+    .resumen {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .encabezado-registro {
+        padding: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .enlaces {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .contenedor {
+        padding: 12px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    #listaMovimientos li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .resumen {
+        grid-template-columns: 1fr;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header class="encabezado-registro">
+        <nav class="menu">
+
+            <h2>Gestión de Notebooks</h2>
+
+            <div class="enlaces">
+                <a href="inicio-noteboks.html">Inicio</a>
+                <a href="registro-notebooks.html">Registro</a>
+                <a href="notebooks-list.html">Listado</a>
+                <a href="reportes.html">Reportes</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="contenedor">
+
+            <!-- TITULO -->
+
+            <h1>Listado de Notebooks</h1>
+
+            <p class="subtitulo">
+                Control del laboratorio de informática
+            </p>
+
+            <!-- RESUMEN -->
+
+            <section class="resumen">
+
+                <div class="tarjeta">
+                    <h3>Total de Notebooks</h3>
+                    <p id="total">0</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Disponibles</h3>
+                    <p id="cantidadDisponible">0</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>En uso</h3>
+                    <p id="cantidadEnUso">0</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Fuera de servicio</h3>
+                    <p id="cantidadFuera">0</p>
+                </div>
+
+            </section>
+
+            <!-- TABLA -->
+
+            <section class="panel tabla-panel">
+
+                <h2>Consulta de Notebooks</h2>
+
+                <input
+                    type="text"
+                    id="buscarNotebook"
+                    placeholder="Buscar por nombre, marca o número..."
+                >
+
+                <div class="tabla-scroll">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>N.º</th>
+                                <th>Notebook</th>
+                                <th>Estado</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="listaNotebooks">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- HISTORIAL -->
+
+            <section class="panel historial-panel">
+
+                <h2>Historial de movimientos</h2>
+
+                <ul id="listaMovimientos">
+                    <li class="vacio">
+                        Todavía no hay movimientos.
+                    </li>
+                </ul>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- PIE DE PAGINA -->
+
+    <footer class="pie">
+        <p>Grupo 4 - Sistema Integrador PPP</p>
+    </footer>
+
+    <script>
+        
+// DATOS
+
+let notebooks = JSON.parse(localStorage.getItem("notebooks")) || [];
+
+let historial = JSON.parse(localStorage.getItem("historial")) || [];
+
+
+// ELEMENTOS HTML
+
+const lista = document.getElementById("listaNotebooks");
+const movimientos = document.getElementById("listaMovimientos");
+const buscador = document.getElementById("buscarNotebook");
+
+
+// GUARDAR DATOS
+
+function guardarDatos() {
+    localStorage.setItem("notebooks", JSON.stringify(notebooks));
+    localStorage.setItem("historial", JSON.stringify(historial));
+}
+
+
+// OBTENER NOMBRE DE NOTEBOOK
+
+function nombreNotebook(notebook) {
+
+    if (notebook.nombre) {
+        return notebook.nombre;
+    }
+
+    return [notebook.marca, notebook.modelo]
+        .filter(Boolean)
+        .join(" ") || "Notebook";
+}
+
+
+// NORMALIZAR ESTADOS
+
+function normalizarEstado(estado) {
+
+    const valor = String(estado || "").toLowerCase();
+
+    if (valor === "disponible") {
+        return "Disponible";
+    }
+
+    if (valor === "en uso" || valor === "prestada") {
+        return "En uso";
+    }
+
+    if (
+        valor === "fuera de servicio" ||
+        valor === "reparacion" ||
+        valor === "reparación" ||
+        valor === "baja"
+    ) {
+        return "Fuera de servicio";
+    }
+
+    return estado || "Disponible";
+}
+
+
+// CLASES DE LOS ESTADOS
+
+function claseEstado(estado) {
+
+    if (estado === "Disponible") {
+        return "estado-disponible";
+    }
+
+    if (estado === "En uso") {
+        return "estado-en-uso";
+    }
+
+    return "estado-fuera";
+}
+
+
+// REGISTRAR MOVIMIENTO
+
+function registrarMovimiento(texto) {
+
+    const fecha = new Date().toLocaleString("es-AR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    historial.unshift({
+        texto: texto,
+        fecha: fecha
+    });
+
+    // Guardar solamente los últimos 8 movimientos
+
+    historial = historial.slice(0, 8);
+
+    guardarDatos();
+
+    actualizarHistorial();
+}
+
+
+// ACTUALIZAR HISTORIAL
+
+function actualizarHistorial() {
+
+    movimientos.innerHTML = "";
+
+    if (historial.length === 0) {
+
+        const li = document.createElement("li");
+
+        li.className = "vacio";
+        li.textContent = "Todavía no hay movimientos.";
+
+        movimientos.appendChild(li);
+
+        return;
+    }
+
+    historial.forEach(movimiento => {
+
+        const li = document.createElement("li");
+
+        const descripcion = document.createElement("span");
+        const hora = document.createElement("span");
+
+        descripcion.textContent = movimiento.texto;
+
+        hora.textContent = movimiento.fecha;
+        hora.className = "movimiento-hora";
+
+        li.appendChild(descripcion);
+        li.appendChild(hora);
+
+        movimientos.appendChild(li);
+
+    });
+}
+
+
+// ACTUALIZAR CONTADORES
+
+function actualizarContadores() {
+
+    document.getElementById("total").textContent =
+        notebooks.length;
+
+    document.getElementById("cantidadDisponible").textContent =
+        notebooks.filter(n => n.estado === "Disponible").length;
+
+    document.getElementById("cantidadEnUso").textContent =
+        notebooks.filter(n => n.estado === "En uso").length;
+
+    document.getElementById("cantidadFuera").textContent =
+        notebooks.filter(n => n.estado === "Fuera de servicio").length;
+}
+
+
+// ACTUALIZAR TABLA
+
+function actualizarTabla() {
+
+    lista.innerHTML = "";
+
+    const busqueda = buscador.value.toLowerCase().trim();
+
+    const notebooksFiltradas = notebooks
+        .slice()
+        .sort((a, b) => Number(a.numero) - Number(b.numero))
+        .filter(notebook => {
+
+            const nombre = nombreNotebook(notebook).toLowerCase();
+
+            return (
+                String(notebook.numero).includes(busqueda) ||
+                nombre.includes(busqueda) ||
+                String(notebook.marca || "").toLowerCase().includes(busqueda) ||
+                String(notebook.modelo || "").toLowerCase().includes(busqueda)
+            );
+        });
+
+    if (notebooksFiltradas.length === 0) {
+
+        const fila = document.createElement("tr");
+        const celda = document.createElement("td");
+
+        celda.colSpan = 4;
+        celda.textContent = notebooks.length === 0
+            ? "Todavía no hay notebooks registradas."
+            : "No se encontraron resultados.";
+
+        fila.appendChild(celda);
+        lista.appendChild(fila);
+
+    }
+
+    notebooksFiltradas.forEach(notebook => {
+
+        const fila = document.createElement("tr");
+
+        // NUMERO
+
+        const celdaNumero = document.createElement("td");
+        celdaNumero.textContent = notebook.numero;
+
+        // NOMBRE
+
+        const celdaNombre = document.createElement("td");
+        celdaNombre.textContent = nombreNotebook(notebook);
+
+        // ESTADO
+
+        const celdaEstado = document.createElement("td");
+
+        const etiqueta = document.createElement("span");
+
+        etiqueta.className = "estado " + claseEstado(notebook.estado);
+        etiqueta.textContent = notebook.estado;
+
+        celdaEstado.appendChild(etiqueta);
+
+        // ACCION
+
+        const celdaAccion = document.createElement("td");
+
+        const boton = document.createElement("button");
+
+        boton.textContent = "Cambiar";
+        boton.className = "btn-cambiar";
+
+        boton.addEventListener("click", function() {
+
+            const opciones = [
+                "Disponible",
+                "En uso",
+                "Fuera de servicio"
+            ];
+
+            const actual = opciones.indexOf(notebook.estado);
+
+            const siguiente = opciones[(actual + 1) % opciones.length];
+
+            const anterior = notebook.estado;
+
+            notebook.estado = siguiente;
+
+            guardarDatos();
+
+            registrarMovimiento(
+                nombreNotebook(notebook) +
+                ": " + anterior + " → " + siguiente
+            );
+
+            actualizarTabla();
+            actualizarContadores();
+
+        });
+
+        celdaAccion.appendChild(boton);
+
+        // AGREGAR FILA
+
+        fila.append(
+            celdaNumero,
+            celdaNombre,
+            celdaEstado,
+            celdaAccion
+        );
+
+        lista.appendChild(fila);
+
+    });
+
+    actualizarContadores();
+}
+
+
+// BUSCADOR
+
+buscador.addEventListener("input", function() {
+    actualizarTabla();
+});
+
+
+// INICIAR PAGINA
+
+notebooks = notebooks.map(notebook => ({
+    ...notebook,
+    estado: normalizarEstado(notebook.estado)
+}));
+
+guardarDatos();
+
+actualizarTabla();
+actualizarHistorial();
+
+    </script>
+
+</body>
+</html>

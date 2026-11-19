@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Notebooks - Grupo 4</title>
+    <link rel="stylesheet" href="../../css/registro-notebooks.css"/>
+  </head>
+
+  <body>
+    
+   <header class="encabezado-registro">
+
+    <nav class="menu">
+
+        <h2>Gestión de Notebooks</h2>
+
+        <div class="enlaces">
+            <a href="inicio-noteboks.html">Inicio</a>
+            <a href="registro-notebooks.html">Registro</a>
+            <a href="#">Listado</a>
+            <a href="#">Reportes</a>
+        </div>
+
+    </nav>
+
+</header>
+
+    <main class="contenedor">
+
+      <br>
+
+      <section class="panel">
+        <h1>Registrar notebook</h1>
+        <p>Completa los datos para agregar una nueva notebook al sistema.</p>
+
+        <br>
+
+        <form>
+
+          <label for="numero">ID de Notebook</label> <br>
+
+          <input type="number" id="numero" name="numero" placeholder="Ingresa el ID (ej:180)">
+          <br><br>
+
+          <label for="marca">Marca</label> <br>
+          <input type="text" id="marca" name="marca" placeholder="Selecciona la marca">
+          <br><br>
+
+          <label for="modelo">Modelo</label> <br>
+          <input type="text" id="modelo" name="modelo" placeholder="Ingresa el modelo">
+          <br><br>
+          
+           <label for="estado">Estado</label> <br>
+
+          <select id="estado" name="estado">
+
+            <option value="disponible">Disponible</option>
+            <option value="reparacion">En reparacion</option>
+            <option value="nofunciona">No funciona</option>
+
+          </select>
+
+          <br><br>
+
+           <label for="obs">Observaciones</label>
+
+          <br>
+           <textarea id="observaciones" name="obs" placeholder="Opcional"></textarea>
+
+        </select>
+        
+          <br><br><br>
+          <button type="submit">Guardar</button>
+          <button type="reset">Limpiar todo</button>
+
+        </form>
+
+      </section>
+
+    </main>
+
+     <footer class="pie">
+
+        <p>Grupo 4 - Sistema Integrador PPP</p>
+
+    </footer>
+
+
+  </body>
+</html>
